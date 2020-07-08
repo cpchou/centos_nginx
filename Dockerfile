@@ -14,5 +14,6 @@ RUN yum install nginx -y
 EXPOSE      80
 EXPOSE      443
 VOLUME      ["/etc/nginx"]
-ENTRYPOINT  ["systemctl", "start", "nginx"]
+# ENTRYPOINT  ["systemctl", "start", "nginx"] 
+# Failed to get D-Bus connection: Operation not permitted
 
