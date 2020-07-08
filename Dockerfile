@@ -11,5 +11,8 @@ RUN bash -c 'echo -e "baseurl=http://nginx.org/packages/centos/\$releasever/\$ba
 
 RUN yum-config-manager --enable nginx-stable
 RUN yum install nginx -y
-RUN systemctl start nginx
+EXPOSE      80
+EXPOSE      443
+VOLUME      ["/etc/nginx"]
+ENTRYPOINT  ["systemctl", "start", "nginx"]
 
