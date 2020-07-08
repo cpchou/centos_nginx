@@ -3,10 +3,14 @@ RUN yum -y update
 #安裝 keepalived 和 nginx
 #下載
 RUN cd /usr/local/src/
-RUN wget http://nginx.org/download/nginx-1.9.7.tar.gz
+#RUN wget http://nginx.org/download/nginx-1.9.7.tar.gz
+RUN wget http://nginx.org/download/nginx-1.18.0.tar.gz 
 #解壓
-RUN tar -zvxf nginx-1.9.7.tar.gz 
-RUN cd nginx-1.9.7
+#RUN tar -zvxf nginx-1.9.7.tar.gz 
+#RUN cd nginx-1.9.7
+RUN tar -zvxf nginx-1.18.0.tar.gz 
+RUN cd nginx-1.18.0
+
 #建立Nginx使用者
 RUN groupadd -g 1001 nginx 
 RUN useradd -u 900 nginx -g nginx -s /sbin/nologin
